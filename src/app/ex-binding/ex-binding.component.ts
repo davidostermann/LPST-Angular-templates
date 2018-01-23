@@ -43,7 +43,6 @@ export class ExBindingComponent implements OnInit {
 
   changeTitle() {
     this.title = 'Promo LaPOSTE 3';
-    this.warning = !this.warning;
   }
 
   changeTextA(value) {
