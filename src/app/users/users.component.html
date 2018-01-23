@@ -3,12 +3,6 @@
 
 <ul>
 
-  <app-user-item [userInfo]="u" *ngFor="let u of users" (click)="selectUser(u)"></app-user-item>
+  <app-user-item [userInfo]="u" *ngFor="let u of users" (select)="selectUser($event)"></app-user-item>
 
 </ul>
-
-<div *ngIf="selectedUser">
-  <p>{{ selectedUser.name }}</p>
-  <p>{{ selectedUser.jobTitle }}</p>
-  <img [src]="selectedUser.image" />
-</div>

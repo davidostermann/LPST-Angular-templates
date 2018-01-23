@@ -1,0 +1,6 @@
+<h2>User detail</h2>
+<div *ngIf="userService.selectedUser">
+  <p>{{ userService.selectedUser.name }}</p>
+  <p>{{ userService.selectedUser.jobTitle }}</p>
+  <img [src]="userService.selectedUser.image" />
+</div>
