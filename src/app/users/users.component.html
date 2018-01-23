@@ -3,7 +3,7 @@
 
 <ul>
 
-  <li *ngFor="let u of users" (click)="selectUser(u)">{{ u.name }}</li>
+  <app-user-item [userInfo]="u" *ngFor="let u of users" (click)="selectUser(u)"></app-user-item>
 
 </ul>
 

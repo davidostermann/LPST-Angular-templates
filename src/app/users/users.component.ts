@@ -1,11 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-interface User {
-  id: number;
-  name: string;
-  image: string;
-  jobTitle: string;
-}
+import { User } from '../user';
 
 @Component({
   selector: 'app-users',
