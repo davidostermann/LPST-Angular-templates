@@ -1,0 +1,44 @@
+<div style="text-align:center">
+  <h1 [style.color]="color">
+    Welcome to {{ textA }}!
+  </h1>
+  <p>{{ getDescription() + 1 }}</p>
+
+</div>
+
+<div [ngClass]="warning ? 'red': 'blue'">
+  <h2>{{ user.name }}</h2>
+  <p>{{ user.age }}</p>
+  <p>Birthday : {{ user.birthday | date:'dd/MM/yyyy'}}</p>
+</div>
+
+<button (click)="changeTitle()">Change title</button>
+
+<input type="text" (input)="changeTextA(inputText.value)" [value]="textA" #inputText/>
+<p>
+  Accepte newsletter :
+  <input type="checkbox" (change)="acceptNL(inputCb.checked)" [checked]="user.acceptNL" #inputCb/>
+</p>
+
+<p>
+  L'utilisateur {{ user.acceptNL ? 'accepte' : 'n\'accepte pas' }} de recevoir une newsletter par mois.
+</p>
+
+<p *ngIf="user.acceptNL">
+  L'utilisateur accepte de recevoir une newsletter par mois.
+</p>
+<p *ngIf="!user.acceptNL">
+  L'utilisateur n'accepte pas de recevoir une newsletter par mois.
+</p>
+
+<p *ngIf="user.acceptNL; else temp">
+  L'utilisateur accepte de recevoir une newsletter par mois.
+</p>
+<ng-template #temp>
+  <p>L'utilisateur n'accepte pas de recevoir une newsletter par mois.</p>
+</ng-template>
+
+<select (change)="changeColor(selectElmt.value)" #selectElmt>
+  <option disable [selected]="!color">Choose</option>
+  <option *ngFor="let c of colors" [value]="c.value" [selected]="color == c.value">{{c.name}}</option>
+</select>

@@ -1,0 +1,14 @@
+<h1>USERS</h1>
+
+
+<ul>
+
+  <li *ngFor="let u of users" (click)="selectUser(u)">{{ u.name }}</li>
+
+</ul>
+
+<div *ngIf="selectedUser">
+  <p>{{ selectedUser.name }}</p>
+  <p>{{ selectedUser.jobTitle }}</p>
+  <img [src]="selectedUser.image" />
+</div>
